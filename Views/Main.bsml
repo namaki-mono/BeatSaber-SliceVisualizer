@@ -1,10 +1,356 @@
-<vertical child-control-height='false'>
-    <horizontal horizontal-fit='PreferredSize' spacing='10'>
-        <checkbox-setting
-            preferred-width='60'
-            text='Enabled'
-            value='Enabled-value'
-            apply-on-change='true'
-            hover-hint='Enable SliceVisualizer' />
+<vertical child-control-height='false' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocation='- https://raw.githubusercontent.com/monkeymanboy/BSML-Docs/gh-pages/BSMLSchema.xsd'>
+
+    <tab-selector tab-tag='tabs' />
+    
+    <horizontal preferred-width='100' preferred-height='58' pad-top='8'>
+        <tab tab-name='General' tags='tabs'>
+            <modifier-container child-expand-width='true' horizontal-fit='PreferredSize'>
+                <horizontal>
+                    <checkbox-setting
+                        text='Enabled'
+                        hover-hint='Enable SliceVisualizer'
+                        value='Enabled-value'
+                        apply-on-change='true' />
+                </horizontal>
+            </modifier-container>
+        </tab>
+
+        <tab tab-name='Position' tags='tabs'>
+            <modifier-container child-expand-width='true' horizontal-fit='PreferredSize'>
+                <horizontal>
+                    <checkbox-setting
+                        text='Position From Bloq'
+                        hover-hint='Use render position of the bloq to calculate the position of the visualization'
+                        value='PositionFromCubeTransform-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <slider-setting
+                        text='Canvas X'
+                        hover-hint='X position of the canvas (left to right)'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='-30.0'
+                        max='30.0'
+                        increment='0.1'
+                        value='CanvasOffsetX-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <slider-setting
+                        text='Canvas Y'
+                        hover-hint='Y position of the canvas (bottom to top)'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='-30.0'
+                        max='30.0'
+                        increment='0.1'
+                        value='CanvasOffsetY-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <slider-setting
+                        text='Canvas Z'
+                        hover-hint='Z position of the canvas (back to front)'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='-30.0'
+                        max='30.0'
+                        increment='0.1'
+                        value='CanvasOffsetZ-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <checkbox-setting
+                        text='Rotation From Bloq'
+                        hover-hint='Use render rotation of the bloq to calculate the position of the visualization'
+                        value='RotationFromCubeTransform-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <slider-setting
+                        text='Canvas Rotation X'
+                        hover-hint='Rotate the canvas about the X-axis'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='0.0'
+                        max='359.0'
+                        increment='1.0'
+                        value='CanvasRotationX-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <slider-setting
+                        text='Canvas Rotation Y'
+                        hover-hint='Rotate the canvas about the Y-axis'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='0.0'
+                        max='359.0'
+                        increment='1.0'
+                        value='CanvasRotationY-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <slider-setting
+                        text='Canvas Rotation Z'
+                        hover-hint='Rotate the canvas about the Z-axis'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='0.0'
+                        max='359.0'
+                        increment='1.0'
+                        value='CanvasRotationZ-value'
+                        apply-on-change='true' />
+                </horizontal>
+            </modifier-container>
+        </tab>
+        
+        <tab tab-name='Size' tags='tabs'>
+            <modifier-container child-expand-width='true' horizontal-fit='PreferredSize'>
+                <horizontal>
+                    <slider-setting
+                        text='Slice Width'
+                        hover-hint='Width of the slice line that appears on the bloq'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='0.0'
+                        max='1.0'
+                        increment='0.01'
+                        value='SliceWidth-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <slider-setting
+                        text='Canvas Scale'
+                        hover-hint='Size of the entire canvas'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='0.0'
+                        max='2.0'
+                        increment='0.05'
+                        value='CanvasScale-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <slider-setting
+                        text='Bloq Scale'
+                        hover-hint='Size of the bloq, relative to canvas scale'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='0.0'
+                        max='2.0'
+                        increment='0.05'
+                        value='CubeScale-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <slider-setting
+                        text='Dot Scale'
+                        hover-hint='Size of the dot in the bloq, relative to bloq scale'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='0.0'
+                        max='2.0'
+                        increment='0.05'
+                        value='CenterScale-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <slider-setting
+                        text='Arrow Scale'
+                        hover-hint='Size of the arrow in the bloq, relative to bloq scale'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='0.0'
+                        max='2.0'
+                        increment='0.05'
+                        value='ArrowScale-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <slider-setting
+                        text='Opacity'
+                        hover-hint='Opacity of the entire visualization'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='0.0'
+                        max='1.0'
+                        increment='0.01'
+                        value='UIOpacity-value'
+                        apply-on-change='true' />
+                </horizontal>
+            </modifier-container>
+        </tab>
+
+        <tab tab-name='Colors' tags='tabs'>
+            <modifier-container child-expand-width='true' horizontal-fit='PreferredSize'>
+                <horizontal>
+                    <color-setting
+                        text='Missed Area Color'
+                        hover-hint='RGB color for the area between note center and cut line'
+                        value='MissedAreaColor-value'
+                        apply-on-change='true'
+                        bind-value='true' />
+                </horizontal>
+                <horizontal>
+                    <color-setting
+                        text='Slice Color'
+                        hover-hint='RGB color for the cut line'
+                        value='SliceColor-value'
+                        apply-on-change='true'
+                        bind-value='true' />
+                </horizontal>
+                <horizontal>
+                    <color-setting
+                        text='Arrow Color'
+                        hover-hint='RGB color for the arrow'
+                        value='ArrowColor-value'
+                        apply-on-change='true'
+                        bind-value='true' />
+                </horizontal>
+                <horizontal>
+                    <color-setting
+                        text='Bad Direction Color'
+                        hover-hint='RGB color for the arrow when cutting from the wrong side'
+                        value='BadDirectionColor-value'
+                        apply-on-change='true'
+                        bind-value='true' />
+                </horizontal>
+                <horizontal>
+                    <color-setting
+                        text='Dot Color'
+                        hover-hint='RGB color for the dot in the middle of the bloq'
+                        value='CenterColor-value'
+                        apply-on-change='true'
+                        bind-value='true' />
+                </horizontal>
+                <horizontal>
+                    <checkbox-setting
+                        text='Use Custom Bloq Colors'
+                        hover-hint='Enable custom left and right bloq colors'
+                        value='UseCustomColors-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <color-setting
+                        text='Left Bloq Color'
+                        hover-hint='RGB color for the left bloq'
+                        value='LeftColor-value'
+                        apply-on-change='true'
+                        bind-value='true' />
+                </horizontal>
+                <horizontal>
+                    <color-setting
+                        text='Right Bloq Color'
+                        hover-hint='RGB color for the right bloq'
+                        value='RightColor-value'
+                        apply-on-change='true'
+                        bind-value='true' />
+                </horizontal>
+            </modifier-container>
+        </tab>
+        
+        <tab tab-name='Animation' tags='tabs'>
+            <modifier-container child-expand-width='true' horizontal-fit='PreferredSize'>
+                <horizontal>
+                    <slider-setting
+                        text='Bloq Duration'
+                        hover-hint='Amount of seconds a bloq remains before disappearing'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='0.0'
+                        max='5.0'
+                        increment='0.1'
+                        value='CubeLifetime-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <slider-setting
+                        text='Fade Start'
+                        hover-hint='Amount of seconds before a bloq starts fading'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='0.0'
+                        max='5.0'
+                        increment='0.1'
+                        value='FadeStart-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <slider-setting
+                        text='Pop Duration'
+                        hover-hint='Amount of seconds highlighting the bloq'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='0.0'
+                        max='2.0'
+                        increment='0.1'
+                        value='PopEnd-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <slider-setting
+                        text='Pop Length'
+                        hover-hint='Distance the bloq moves away'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='0.0'
+                        max='2.0'
+                        increment='0.1'
+                        value='PopDistance-value'
+                        apply-on-change='true' />
+                </horizontal>
+            </modifier-container>
+        </tab>
+
+        <tab tab-name='Scoring' tags='tabs'>
+            <modifier-container child-expand-width='true' horizontal-fit='PreferredSize'>
+                <horizontal>
+                    <dropdown-list-setting
+                        text='Scaling Mode'
+                        hover-hint='Scaling function for cut offset'
+                        value='ScoreScaling-value'
+                        choices='ScoreScaling-values'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <slider-setting
+                        text='Scale Minimum'
+                        hover-hint='Minimum value for the scaling'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='0.05'
+                        max='1.0'
+                        increment='0.05'
+                        value='ScoreScaleMin-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <slider-setting
+                        text='Scale Maximum'
+                        hover-hint='Maximum value for the scaling'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='0.05'
+                        max='1.0'
+                        increment='0.05'
+                        value='ScoreScaleMax-value'
+                        apply-on-change='true' />
+                </horizontal>
+                <horizontal>
+                    <slider-setting
+                        text='Score Scale'
+                        hover-hint='Multiplier for cut offset'
+                        show-buttons='true'
+                        integer-only='false'
+                        min='0.5'
+                        max='5.0'
+                        increment='0.05'
+                        value='ScoreScale-value'
+                        apply-on-change='true' />
+                </horizontal>
+            </modifier-container>
+        </tab>
     </horizontal>
 </vertical>
